@@ -6,7 +6,7 @@ const initialGameBoard = [
     [null, null, null]
 ]
 
-export default function GameBoard() {
+export default function GameBoard({setActivePlayer}) {
     const [gameBoard, setGameBoard] = useState(initialGameBoard)
 
     function handleUpdateGameBoard(rowIndex, colIndex) {
@@ -16,6 +16,8 @@ export default function GameBoard() {
             return updatedGameBoard
         })
     }
+
+    setActivePlayer();
 
     return (
         <ol id="game-board">
