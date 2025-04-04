@@ -10,8 +10,9 @@ export default function Player({playerName, playerSymbol}) {
     return (
         <li>
               <span className="player">
-                  { isEditing
-                      ? <input type="text" />
+                  {
+                      isEditing
+                      ? <input type="text" required defaultValue={playerName}/>
                       : <span className="player-name">{playerName}</span>
                   }
                 <span className="player-symbol">{playerSymbol}</span>
