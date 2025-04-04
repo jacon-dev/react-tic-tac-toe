@@ -4,7 +4,7 @@ export default function Player({playerName, playerSymbol}) {
     const [isEditing, setIsEditing] = useState(false, )
 
     function handleEditClick() {
-        setIsEditing((editing) => !editing)
+        setIsEditing(editing => !editing)
     }
 
     return (
