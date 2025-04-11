@@ -50,6 +50,10 @@ function App() {
         })
     }
 
+    function resetGame(){
+        setGameTurns([]);
+    }
+
   return (
       <main>
         <div id="game-container">
@@ -57,7 +61,7 @@ function App() {
             <Player initialName="Player 1" playerSymbol="X" isActive={activePlayer === 'X'} />
             <Player initialName="Player 2" playerSymbol="O" isActive={activePlayer === 'O'} />
           </ol>
-            {(winner || draw) && <GameOver winner={winner} />}
+            {(winner || draw) && <GameOver winner={winner} resetGame={resetGame} />}
             <GameBoard onSelectSquare={handleSelectSquare} gameBoard={gameBoard} />
         </div>
       <Log gameTurns={gameTurns} />
